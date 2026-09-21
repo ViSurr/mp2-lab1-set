@@ -49,6 +49,9 @@
 // easyUnit framework.
 
 #define _VARIADIC_MAX 10
+#define GTEST_HAS_TR1_TURPLE 0
+#define GTEST_HAS_STD_TURPLE 1
+
 
 #ifndef GTEST_INCLUDE_GTEST_GTEST_H_
 #define GTEST_INCLUDE_GTEST_GTEST_H_
