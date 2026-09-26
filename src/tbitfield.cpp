@@ -114,7 +114,18 @@ TBitField TBitField::operator|(const TBitField &bf) // операция "или"
 {
 	int maxlen = std::min(BitLen, bf.BitLen);
 	TBitField res(maxlen);
-	//...
+	for(int i=Bitlen; i<memlen*sizeof(TELEM)*8;i++){
+	ClrBit(i);
+        }
+	for (int i=0; i<MemLen; i++)
+	{
+	res.pMem[i]=pMem[i];
+	}
+	for (int i=0; i<bf.BitLen; i++)
+	{
+	res.pMem[i]|=bf.pMem[i];
+	}
+	return res;
 }
 
 TBitField TBitField::operator&(const TBitField &bf) // операция "и"
